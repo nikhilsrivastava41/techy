@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function Sidecart() {
-  return <div></div>;
+export default function SideCart() {
+  return <div>hello from sidecart</div>;
 }

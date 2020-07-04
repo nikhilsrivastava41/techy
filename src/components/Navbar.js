@@ -6,19 +6,16 @@ import logo from "../images/logo.svg";
 export default function Navbar() {
   return (
     <ProductConsumer>
-      {(value) => {
+      {value => {
         const { cartItems, handleSidebar, handleCart } = value;
         return (
           <NavWrapper>
             <div className="nav-center">
               <FaBars className="nav-icon" onClick={handleSidebar} />
-              <img src={logo} alt="tech-store" />
+              <img src={logo} alt="tech store logo" />
               <div className="nav-cart">
-                <FaCartPlus
-                  className="nav-icon"
-                  onClick={handleCart}
-                ></FaCartPlus>
-                <div className="cart-items">{cartItems} </div>
+                <FaCartPlus className="nav-icon" onClick={handleCart} />
+                <div className="cart-items">{cartItems}</div>
               </div>
             </div>
           </NavWrapper>
@@ -27,6 +24,7 @@ export default function Navbar() {
     </ProductConsumer>
   );
 }
+
 const NavWrapper = styled.nav`
   position: -webkit-sticky;
   position: sticky;
@@ -41,25 +39,22 @@ const NavWrapper = styled.nav`
     justify-content: space-between;
     max-width: 1170px;
     margin: 0 auto;
-
   }
-  .nav-icons{
-  	font-size: 1.5rem;
-  	cursor: pointer;
-
+  .nav-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
   }
-  .nav-cart{
-  	position: relative;
-
+  .nav-cart {
+    position: relative;
   }
-  .cart-items{
-  	background: var(--primaryColor);
-  	color: var(--mainWhite);
-  	font-size: 0.85rem;
-  	position:absolute;
-  	top: -8px;
-  	right: -8px;
-  	padding: 0 5px;
-  	border-radius: 50%;
+  .cart-items {
+    background: var(--primaryColor);
+    color: var(--mainWhite);
+    font-size: 0.85rem;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    padding: 0 5px;
+    border-radius: 50%;
   }
 `;
